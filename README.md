@@ -1,11 +1,4 @@
-## 💜🌊 PurplWav Webpage 
-
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Vue.js](https://img.shields.io/badge/Vue.js-3.x-42b883?logo=vue.js)
-![Hosted on AWS](https://img.shields.io/badge/Deployed%20on-AWS-yellow)
-![License](https://img.shields.io/badge/license-MIT--0-lightgrey)
-![Last Commit](https://img.shields.io/github/last-commit/djleamen/purplwav-website)
-
+## 💜🌊 PurplWav Webpage  
 Using Vue.js AWS Template.
 
 This repository contains a Vue.js application for the PurplWav epilepsy awareness campaign. Deployed on AWS.
@@ -28,3 +21,7 @@ This repository contains a Vue.js application for the PurplWav epilepsy awarenes
 ## License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
+
+## Contact
+
+For any inquiries, please contact me at [dilara_leamen@icloud.com](mailto:dilara_leamen@icloud.com).

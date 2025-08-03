@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, RouteLocationNormalized } from 'vue-router';
 import Home from '@/components/Home.vue';
 import About from '@/components/About.vue';
 import EpilepsyFacts from '@/components/EpilepsyFacts.vue';
@@ -20,6 +20,14 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to: RouteLocationNormalized, from: RouteLocationNormalized, savedPosition: any) {
+    // If there's a saved position (back/forward buttons), use it
+    if (savedPosition) {
+      return savedPosition;
+    }
+    // Otherwise, scroll to top for all route changes
+    return { top: 0, behavior: 'smooth' };
+  },
 });
 
 export default router;

@@ -6,8 +6,8 @@ import image2014 from '@/assets/Aydin2014.jpg';
 import image2017 from '@/assets/AydinDilaraCarionFenn.jpg';
 import image2018 from '@/assets/AydinMelRogers.jpg';
 import image2019 from '@/assets/AydinEEG.jpg';
+import image2020 from '@/assets/VNS.jpg';
 import image2023 from '@/assets/Aydin2023.jpg';
-import image2024 from '@/assets/AydinVNS.jpg';
 
 const events = [
   { date: '2008', title: 'Aydin is Born', description: 'Aydin Leamen was born a healthy baby boy.', image: image2008 },
@@ -17,8 +17,8 @@ const events = [
   { date: '2017', title: 'Rare Disease Expo', description: 'Dilara and Aydin spoke at the Carion Fenn Rare Disease Expo to talk about epilepsy and mental health.', image: image2017 },
   { date: '2018', title: "Health 180 with Carion Fenn", description: 'Aydin and Melike were featured on Health 180 on ROGERStv.', image: image2018 },
   { date: '2019', title: 'Stereo EEG Surgery', description: 'Aydin underwent invasive Stereo EEG surgery to locate seizure focus for possible resection.', image: image2019 },
+  { date: '2020', title: 'VNS Implant Surgery', description: 'Aydin received a Vagus Nerve Stimulator to help manage seizures.', image: image2020 },
   { date: '2023', title: 'Diagnosed with LGS & ADHD', description: 'Aydin was diagnosed with Lennox-Gastaut Syndrome and ADHD, requiring new treatment strategies.', image: image2023 },
-  { date: '2024', title: 'VNS Implant Surgery', description: 'Aydin received a Vagus Nerve Stimulator to help manage seizures.', image: image2024 },
 ];
 </script>
 
