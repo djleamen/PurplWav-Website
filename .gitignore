@@ -29,6 +29,11 @@ coverage
 
 *.tsbuildinfo
 
+# TypeScript generated files
+*.vue.js
+*.vue.d.ts
+/types
+
 # amplify
 .amplify
 amplifyconfiguration*

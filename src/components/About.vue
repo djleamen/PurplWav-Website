@@ -25,6 +25,7 @@
               <iframe 
                 src="https://www.youtube.com/embed/lsITWSdajf8?si=LuFMenVeOXdkHXvq" 
                 title="PurplWav Story - Part 1" 
+                frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" 
                 allowfullscreen>
@@ -36,6 +37,7 @@
               <iframe 
                 src="https://www.youtube.com/embed/IPIBJeWye3Y?si=3y9MKuqav2bu9wbP" 
                 title="PurplWav Story - Part 2" 
+                frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" 
                 allowfullscreen>

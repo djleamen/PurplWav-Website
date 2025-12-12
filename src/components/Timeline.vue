@@ -30,7 +30,7 @@ const events = [
           <div class="timeline-date">{{ event.date }}</div>
           <h3>{{ event.title }}</h3>
           <p>{{ event.description }}</p>
-          <img :src="event.image" alt="Event" class="timeline-image" />
+          <img :src="event.image" :alt="event.title" class="timeline-image" />
         </div>
       </div>
     </div>
