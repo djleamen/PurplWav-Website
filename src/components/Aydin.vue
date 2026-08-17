@@ -28,7 +28,7 @@
               those around him with his unwavering spirit.
             </p>
             <p>
-              His journey is the reason PurplWav exists — and the timeline below traces the
+              His journey is the reason PurplWav exists, and the timeline below traces the
               milestones that shaped our campaign.
             </p>
           </div>

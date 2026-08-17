@@ -57,6 +57,13 @@ onUnmounted(() => {
         <RouterLink to="/resources" class="nav-link" @click="isMenuOpen = false">Resources</RouterLink>
         <RouterLink to="/first-aid" class="nav-link" @click="isMenuOpen = false">Seizure First Aid</RouterLink>
         <RouterLink to="/aydin" class="nav-link" @click="isMenuOpen = false">Aydin's Story</RouterLink>
+        <a
+          href="https://pulling-together-for-epilepsy.raiselysite.com/t/aydins-purple-army"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-link"
+          @click="isMenuOpen = false"
+        >Join the Purple Army</a>
         <RouterLink to="/contact" class="nav-link nav-link-cta" @click="isMenuOpen = false">Contact Us</RouterLink>
       </nav>
 
@@ -96,9 +103,9 @@ onUnmounted(() => {
           <h3 class="footer-heading">About</h3>
           <ul class="footer-links">
             <li><RouterLink to="/about">Who We Are</RouterLink></li>
+            <li><a href="https://pulling-together-for-epilepsy.raiselysite.com/t/aydins-purple-army" target="_blank" rel="noopener noreferrer">Join Aydin's Purple Army</a></li>
             <li><RouterLink to="/contact">Contact Us</RouterLink></li>
             <li><a href="https://www.purpleday.org/" target="_blank" rel="noopener noreferrer">Purple Day</a></li>
-            <li><a href="https://www.epilepsy.ca/" target="_blank" rel="noopener noreferrer">Epilepsy Canada</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -117,7 +124,7 @@ onUnmounted(() => {
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 PurplWav. Raising awareness about epilepsy with love and support.</p>
+        <p>© 2026 PurplWav. Raising awareness about epilepsy with love and support.</p>
         <p>Dedicated to Aydin and all those affected by epilepsy. This site provides general information only and is not a substitute for medical advice.</p>
       </div>
     </div>

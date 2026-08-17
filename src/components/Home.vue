@@ -2,7 +2,7 @@
   <div class="home">
     <!-- Hero Section -->
     <section class="hero">
-      <div class="container container-xl">
+      <div class="container container-xl hero-layout">
         <div class="hero-content">
           <span class="hero-eyebrow">Epilepsy Awareness · Outreach · Research</span>
           <h1 class="hero-title">Raising epilepsy awareness in Durham Region and beyond</h1>
@@ -16,6 +16,7 @@
             <RouterLink to="/first-aid" class="btn btn-inverse-outline">Seizure First Aid</RouterLink>
           </div>
         </div>
+        <img src="@/assets/logo.svg" alt="" aria-hidden="true" class="hero-mark" />
       </div>
     </section>
 
@@ -34,6 +35,40 @@
           <div class="stat">
             <div class="stat-value">30%</div>
             <div class="stat-label">of people with epilepsy have drug-resistant seizures</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fundraising Highlight -->
+    <section class="fundraiser" aria-labelledby="fundraiser-title">
+      <div class="container container-xl">
+        <div class="fundraiser-card">          <img
+            src="@/assets/AydinTankPull.png"
+            alt="Aydin wearing an Epilepsy Matters shirt, standing in front of an armoured tank"
+            class="fundraiser-image"
+          />          <div class="fundraiser-body">
+            <span class="fundraiser-eyebrow">Want to pull a tank for a good cause?</span>
+            <h2 id="fundraiser-title" class="fundraiser-title">Aydin's Purple Army: Tank Pull Challenge</h2>
+            <p class="fundraiser-description">
+              On Saturday, October 17, our team takes on an 8-tonne tank, pulling it 200 feet
+              to raise funds for Epilepsy Durham Region. Every donation supports vital programs,
+              resources, and mental health initiatives for people living with epilepsy.
+            </p>
+            <div class="fundraiser-actions">
+              <a
+                href="https://pulling-together-for-epilepsy.raiselysite.com/t/aydins-purple-army"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-inverse"
+              >Donate now</a>
+              <a
+                href="https://pulling-together-for-epilepsy.raiselysite.com/signup?parentId=aydins-purple-army"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-inverse-outline"
+              >Join the team</a>
+            </div>
           </div>
         </div>
       </div>
@@ -82,9 +117,37 @@
       </div>
     </section>
 
+    <!-- Showcase Section -->
+    <section class="showcase">
+      <div class="container container-xl">
+        <div class="showcase-card card">
+          <img
+            src="@/assets/AydinGrad.jpg"
+            alt="Aydin celebrating his graduation, holding a Class of 2026 pennant"
+            class="showcase-image"
+          />
+          <div class="showcase-body">
+            <span class="showcase-eyebrow">Featured Story</span>
+            <h2 class="showcase-title">More Than an Epilepsy Diagnosis: Aydin's Inspiring Journey</h2>
+            <p class="showcase-description">
+              Epilepsy Durham Region shares Aydin's story: from living with drug-resistant
+              epilepsy to celebrating milestones like his high school graduation, 
+              proving that a diagnosis doesn't define your potential.
+            </p>
+            <a
+              href="https://epilepsydurham.com/more-than-an-epilepsy-diagnosis-aydins-inspiring-journey/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary showcase-btn"
+            >Read the full story →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Emergency Notice -->
     <section class="emergency-strip">
-      <div class="container container-lg">
+      <div class="container container-xl">
         <div class="notice notice-emergency">
           <h2 class="notice-title">Seizure emergency?</h2>
           <p>
@@ -122,8 +185,24 @@ import { RouterLink } from 'vue-router';
   padding: var(--space-20) 0;
 }
 
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-10);
+}
+
 .hero-content {
   max-width: 780px;
+}
+
+.hero-mark {
+  flex-shrink: 0;
+  width: 260px;
+  height: auto;
+  opacity: 0.28;
+  filter: brightness(0) invert(1);
+  pointer-events: none;
 }
 
 .hero-eyebrow {
@@ -154,6 +233,67 @@ import { RouterLink } from 'vue-router';
   display: flex;
   gap: var(--space-4);
   flex-wrap: wrap;
+}
+
+/* Fundraising Highlight */
+.fundraiser {
+  background-color: var(--color-primary-50);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-10) 0;
+}
+
+.fundraiser-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 420px) 1fr;
+  background-color: var(--color-primary-800);
+  border: 1px solid var(--color-primary-900);
+  border-radius: var(--radius-lg);
+  color: white;
+  overflow: hidden;
+}
+
+.fundraiser-image {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.fundraiser-body {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fundraiser-eyebrow {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-200);
+  margin-bottom: var(--space-3);
+}
+
+.fundraiser-title {
+  font-size: var(--text-3xl);
+  color: white;
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-tight);
+}
+
+.fundraiser-description {
+  color: var(--color-primary-100);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.fundraiser-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
 }
 
 /* Statistics Band */
@@ -239,6 +379,60 @@ import { RouterLink } from 'vue-router';
   text-decoration: underline;
 }
 
+/* Showcase Section */
+.showcase {
+  padding: 0 0 var(--space-16);
+}
+
+.showcase-card {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) 1fr;
+  padding: 0;
+  overflow: hidden;
+}
+
+.showcase-image {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase-body {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.showcase-eyebrow {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-600);
+  margin-bottom: var(--space-3);
+}
+
+.showcase-title {
+  font-size: var(--text-3xl);
+  color: var(--color-primary-800);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-tight);
+}
+
+.showcase-description {
+  color: var(--color-neutral-600);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.showcase-btn {
+  text-decoration: none;
+}
+
 /* Emergency Notice */
 .emergency-strip {
   padding: 0 0 var(--space-16);
@@ -284,12 +478,33 @@ import { RouterLink } from 'vue-router';
     padding: var(--space-12) 0;
   }
 
+  .hero-mark {
+    display: none;
+  }
+
   .hero-title {
     font-size: var(--text-4xl);
   }
 
   .hero-description {
     font-size: var(--text-lg);
+  }
+
+  .fundraiser-card {
+    grid-template-columns: 1fr;
+  }
+
+  .fundraiser-image {
+    min-height: 0;
+    max-height: 260px;
+  }
+
+  .fundraiser-body {
+    padding: var(--space-6);
+  }
+
+  .fundraiser-title {
+    font-size: var(--text-2xl);
   }
 
   .stats-grid {
@@ -299,6 +514,15 @@ import { RouterLink } from 'vue-router';
 
   .features-grid {
     grid-template-columns: 1fr;
+  }
+
+  .showcase-card {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-image {
+    min-height: 0;
+    max-height: 340px;
   }
 }
 </style>
