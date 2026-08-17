@@ -25,13 +25,13 @@ const vuetify = createVuetify({
     themes: {
       light: {
         colors: {
-          primary: '#825ed1',
-          secondary: '#7c3aed',
-          accent: '#9575ff',
-          error: '#ef4444',
-          warning: '#f59e0b',
-          info: '#3b82f6',
-          success: '#10b981',
+          primary: '#5b3690',
+          secondary: '#4a2c77',
+          accent: '#8f6fbe',
+          error: '#b3261e',
+          warning: '#9a6700',
+          info: '#1d5a96',
+          success: '#1e7d4f',
         },
       },
     },

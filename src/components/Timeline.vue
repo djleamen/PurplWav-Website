@@ -1,6 +1,6 @@
 <script setup>
 import image2008 from '@/assets/AydinBaby.jpg';
-import image2009 from '@/assets/SeizureClipart.jpg';
+import image2009 from '@/assets/EEGSpikeWaves.png';
 import image2010 from '@/assets/Aydin2010.jpg';
 import image2014 from '@/assets/Aydin2014.jpg';
 import image2017 from '@/assets/AydinDilaraCarionFenn.jpg';
@@ -11,7 +11,14 @@ import image2023 from '@/assets/Aydin2023.jpg';
 
 const events = [
   { date: '2008', title: 'Aydin is Born', description: 'Aydin Leamen was born a healthy baby boy.', image: image2008 },
-  { date: '2009', title: 'First Seizure', description: 'Aydin had his first seizure at 18 months old.', image: image2009 },
+  {
+    date: '2009',
+    title: 'First Seizure',
+    description: 'Aydin had his first seizure at 18 months old.',
+    image: image2009,
+    imageAlt: 'EEG recording showing generalized spike-and-wave discharges',
+    credit: 'EEG: Der Lange / Wikimedia Commons, CC BY-SA 2.0',
+  },
   { date: '2010', title: 'Epilepsy Diagnosis', description: 'Aydin was diagnosed with epilepsy at 2 years old.', image: image2010 },
   { date: '2014', title: 'First Overnight @ SickKids', description: 'Aydin had his first overnight EEG at The Hospital for Sick Children.', image: image2014 },
   { date: '2017', title: 'Rare Disease Expo', description: 'Dilara and Aydin spoke at the Carion Fenn Rare Disease Expo to talk about epilepsy and mental health.', image: image2017 },
@@ -23,88 +30,132 @@ const events = [
 </script>
 
 <template>
-  <div class="timeline-container">
-    <div class="timeline">
-      <div v-for="(event, index) in events" :key="event.date" :class="['timeline-item', { 'left': index % 2 === 0, 'right': index % 2 !== 0 }]">
-        <div class="timeline-content">
-          <div class="timeline-date">{{ event.date }}</div>
-          <h3>{{ event.title }}</h3>
-          <p>{{ event.description }}</p>
-          <img :src="event.image" :alt="event.title" class="timeline-image" />
-        </div>
+  <div class="timeline">
+    <div v-for="event in events" :key="event.date" class="timeline-item">
+      <div class="timeline-marker">
+        <span class="timeline-dot"></span>
+      </div>
+      <div class="timeline-content card">
+        <div class="timeline-date">{{ event.date }}</div>
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+        <img :src="event.image" :alt="event.imageAlt || event.title" class="timeline-image" />
+        <p v-if="event.credit" class="timeline-credit">{{ event.credit }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.timeline-container {
-  padding: 20px;
-  max-width: 800px;
-  min-width: 800px;
-  margin: auto;
-  text-align: center;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+.timeline {
+  position: relative;
+  max-width: 720px;
+  padding-left: var(--space-8);
 }
 
-.timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  gap: 40px;
+/* Vertical rail */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 11px;
+  width: 3px;
+  background-color: var(--color-primary-200);
 }
 
 .timeline-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
   position: relative;
+  padding-bottom: var(--space-8);
 }
 
-.timeline-item.left {
-  align-self: flex-start;
-  margin-left: 0;  /* Ensures left-aligned items stay flush */
+.timeline-item:last-child {
+  padding-bottom: 0;
 }
 
-.timeline-item.right {
-  align-self: flex-end;
-  margin-right: 0; /* Ensures right-aligned items stay flush */
+.timeline-marker {
+  position: absolute;
+  left: calc(-1 * var(--space-8));
+  top: var(--space-5);
+}
+
+.timeline-dot {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-600);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--color-primary-600);
+  margin-left: 3px;
+}
+
+.timeline-content {
+  padding: var(--space-6);
 }
 
 .timeline-date {
-  font-weight: bold;
-  font-size: 1.2em;
-  background: #6a5acd;
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.08em;
   color: white;
-  padding: 10px 0;
-  border-radius: 5px;
-  width: 100%; /* Ensure it stretches to the container */
-  min-width : 600px; /* Set a minimum width */
-  max-width: 600px; /* Set a maximum width so all bars are the same */
-  text-align: center; /* Center text inside */
+  background-color: var(--color-primary-700);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+}
+
+.timeline-content h3 {
+  font-size: var(--text-xl);
+  color: var(--color-primary-800);
+  margin-bottom: var(--space-2);
+}
+
+.timeline-content p {
+  color: var(--color-neutral-600);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
 }
 
 .timeline-image {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  max-width: 320px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-top: 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  display: block;
 }
 
-p {
-  color: #555; /* Slightly lighter gray */
-  font-size: 1em;
-  line-height: 1.6;
-  text-align: center; /* Matches your current layout */
+.timeline-credit {
+  font-size: var(--text-xs);
+  color: var(--color-neutral-500);
+  margin: var(--space-2) 0 0;
+}
+
+@media (max-width: 640px) {
+  .timeline {
+    padding-left: var(--space-6);
+  }
+
+  .timeline-marker {
+    left: calc(-1 * var(--space-6));
+  }
+
+  .timeline::before {
+    left: 9px;
+  }
+
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+    margin-left: 2px;
+  }
+
+  .timeline-image {
+    max-width: 100%;
+    height: 180px;
+  }
 }
 </style>

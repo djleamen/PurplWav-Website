@@ -1,26 +1,27 @@
 <template>
   <div class="epilepsy-facts">
-    <!-- Hero Section -->
-    <section class="facts-hero">
+    <!-- Page Banner -->
+    <section class="page-banner">
       <div class="container container-xl">
-        <div class="hero-content">
-          <h1 class="hero-title">Understanding <span class="text-primary">Epilepsy</span></h1>
-          <p class="hero-description">
-            Learn about this neurological condition that affects millions of people worldwide. 
-            Knowledge leads to understanding, and understanding leads to support.
-          </p>
-        </div>
+        <span class="page-banner-eyebrow">Education</span>
+        <h1>Understanding Epilepsy</h1>
+        <p class="page-banner-lead">
+          Epilepsy is a neurological condition that affects millions of people worldwide.
+          Knowledge leads to understanding, and understanding leads to support.
+        </p>
       </div>
     </section>
 
     <!-- Key Facts Section -->
-    <section class="key-facts">
+    <section class="section">
       <div class="container container-xl">
-        <h2 class="section-title text-center mb-12">Key Facts About Epilepsy</h2>
+        <div class="section-header">
+          <h2>Key Facts About Epilepsy</h2>
+        </div>
         <div class="facts-grid">
           <div class="fact-card card">
             <div class="fact-icon">
-              <v-icon size="48" color="primary">mdi-brain</v-icon>
+              <v-icon size="36" color="primary">mdi-brain</v-icon>
             </div>
             <h3 class="fact-title">Neurological Disorder</h3>
             <p class="fact-description">
@@ -30,7 +31,7 @@
           
           <div class="fact-card card">
             <div class="fact-icon">
-              <v-icon size="48" color="warning">mdi-lightning-bolt</v-icon>
+              <v-icon size="36" color="primary">mdi-lightning-bolt</v-icon>
             </div>
             <h3 class="fact-title">Various Triggers</h3>
             <p class="fact-description">
@@ -40,7 +41,7 @@
           
           <div class="fact-card card">
             <div class="fact-icon">
-              <v-icon size="48" color="success">mdi-pill</v-icon>
+              <v-icon size="36" color="primary">mdi-pill</v-icon>
             </div>
             <h3 class="fact-title">Manageable Condition</h3>
             <p class="fact-description">
@@ -50,7 +51,7 @@
           
           <div class="fact-card card">
             <div class="fact-icon">
-              <v-icon size="48" color="secondary">mdi-star</v-icon>
+              <v-icon size="36" color="primary">mdi-star</v-icon>
             </div>
             <h3 class="fact-title">Full Lives Possible</h3>
             <p class="fact-description">
@@ -62,11 +63,11 @@
     </section>
 
     <!-- Types of Epilepsy Section -->
-    <section class="epilepsy-types">
+    <section class="section section-alt">
       <div class="container container-xl">
         <div class="types-content">
-          <div class="types-text">
-            <h2 class="section-title">Types of Epilepsy</h2>
+          <div class="types-text card">
+            <h2 class="panel-title">Types of Epilepsy</h2>
             <p class="section-description">
               There are many different types of epilepsy, each with its own set of symptoms and characteristics.
             </p>
@@ -93,8 +94,8 @@
               </div>
             </div>
           </div>
-          <div class="seizure-types">
-            <h2 class="section-title">Types of Seizures</h2>
+          <div class="seizure-types card">
+            <h2 class="panel-title">Types of Seizures</h2>
             <p class="section-description">
               Seizures can be classified into different types based on where they start in the brain 
               and how they affect consciousness and movement.
@@ -127,10 +128,10 @@
     </section>
 
     <!-- SUDEP Section -->
-    <section class="sudep-section">
-      <div class="container container-xl">
-        <div class="sudep-content card card-elevated">
-          <h2 class="sudep-title">Understanding SUDEP</h2>
+    <section class="section">
+      <div class="container container-lg">
+        <div class="notice notice-emergency sudep-content">
+          <h2 class="notice-title">Understanding SUDEP</h2>
           <p class="sudep-subtitle">Sudden Unexpected Death in Epilepsy</p>
           <p class="sudep-description">
             SUDEP is a rare but serious complication of epilepsy that affects approximately 
@@ -167,14 +168,16 @@
     </section>
 
     <!-- Drug-Resistant Epilepsy Section -->
-    <section class="drug-resistant">
+    <section class="section section-alt">
       <div class="container container-xl">
         <div class="resistant-content">
           <div class="resistant-image">
             <img src="@/assets/AydinVNS.jpg" alt="VNS Device" class="vns-image" />
           </div>
           <div class="resistant-text">
-            <h2 class="section-title">Drug-Resistant Epilepsy</h2>
+            <div class="section-header">
+              <h2>Drug-Resistant Epilepsy</h2>
+            </div>
             <p class="section-description">
               About 30% of people with epilepsy have drug-resistant epilepsy, meaning their 
               seizures don't respond adequately to medication.
@@ -203,41 +206,7 @@
 </template>
 
 <style scoped>
-/* Facts Hero Section */
-.facts-hero {
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, white 100%);
-  padding: var(--space-20) 0 var(--space-16);
-}
-
-.hero-content {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.hero-title {
-  font-size: var(--text-5xl);
-  margin-bottom: var(--space-6);
-  line-height: var(--leading-tight);
-}
-
-.hero-description {
-  font-size: var(--text-xl);
-  color: var(--color-neutral-600);
-  line-height: var(--leading-relaxed);
-}
-
 /* Key Facts Section */
-.key-facts {
-  padding: var(--space-20) 0;
-  background-color: var(--color-surface-variant);
-}
-
-.section-title {
-  font-size: var(--text-4xl);
-  color: var(--color-neutral-900);
-}
-
 .facts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -245,91 +214,81 @@
 }
 
 .fact-card {
-  text-align: center;
-  padding: var(--space-8);
-  transition: transform var(--transition-normal);
-}
-
-.fact-card:hover {
-  transform: translateY(-4px);
+  padding: var(--space-6);
 }
 
 .fact-icon {
-  font-size: 3rem;
-  margin-bottom: var(--space-4);
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-50);
+  margin-bottom: var(--space-4);
 }
 
 .fact-title {
-  font-size: var(--text-xl);
-  margin-bottom: var(--space-4);
-  color: var(--color-primary-700);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-3);
+  color: var(--color-primary-800);
 }
 
 .fact-description {
   color: var(--color-neutral-600);
   line-height: var(--leading-relaxed);
+  margin: 0;
 }
 
 /* Types of Epilepsy Section */
-.epilepsy-types {
-  padding: var(--space-20) 0;
-  background-color: var(--color-neutral-50);
-}
-
 .types-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
+  gap: var(--space-8);
   align-items: flex-start;
 }
 
-.types-text {
-  background-color: white;
+.types-text,
+.seizure-types {
   padding: var(--space-8);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
 }
 
-.types-text .section-title {
-  color: var(--color-primary-700);
-  margin-bottom: var(--space-4);
+.panel-title {
+  font-size: var(--text-2xl);
+  color: var(--color-primary-800);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 3px solid var(--color-primary-600);
 }
 
 .section-description {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   color: var(--color-neutral-600);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   line-height: var(--leading-relaxed);
 }
 
 .types-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
 }
 
 .type-item {
-  padding: var(--space-6);
-  background-color: white;
-  border-radius: var(--radius-xl);
-  border-left: 4px solid var(--color-primary-500);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-neutral-200);
 }
 
-.type-item:hover {
-  transform: translateX(4px);
-  box-shadow: var(--shadow-md);
-  border-left-width: 6px;
+.type-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .type-item h4 {
-  font-size: var(--text-lg);
-  color: var(--color-primary-700);
-  margin-bottom: var(--space-2);
+  font-family: var(--font-family-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-primary-800);
+  margin-bottom: var(--space-1);
 }
 
 .type-item p {
@@ -338,58 +297,22 @@
   margin: 0;
 }
 
-.seizure-types {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  padding: var(--space-8);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-}
-
-.seizure-types .section-title {
-  margin-bottom: var(--space-4);
-  color: var(--color-primary-700);
-}
-
-.seizure-types .section-description {
-  font-size: var(--text-lg);
-  color: var(--color-neutral-600);
-  margin-bottom: var(--space-8);
-  line-height: var(--leading-relaxed);
-}
-
 /* SUDEP Section */
-.sudep-section {
-  padding: var(--space-20) 0;
-  background-color: var(--color-surface-variant);
-}
-
 .sudep-content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: var(--space-12);
-  background: linear-gradient(135deg, var(--color-error) 0%, #dc2626 100%);
-  color: white;
-}
-
-.sudep-title {
-  font-size: var(--text-4xl);
-  color: white;
-  margin-bottom: var(--space-2);
+  padding: var(--space-8);
 }
 
 .sudep-subtitle {
-  font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: var(--space-6);
+  font-size: var(--text-base);
+  color: var(--color-neutral-600);
+  margin-bottom: var(--space-4);
   font-style: italic;
 }
 
 .sudep-description {
   font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: var(--space-8);
+  color: var(--color-neutral-800);
+  margin-bottom: var(--space-6);
   line-height: var(--leading-relaxed);
 }
 
@@ -397,81 +320,83 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-8);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .info-column h4 {
-  font-size: var(--text-xl);
-  color: white;
-  margin-bottom: var(--space-4);
+  font-family: var(--font-family-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--space-3);
 }
 
 .info-column ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .info-column li {
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: var(--space-3);
-  padding-left: var(--space-6);
+  color: var(--color-neutral-700);
+  margin-bottom: var(--space-2);
+  padding-left: var(--space-5);
   position: relative;
 }
 
 .info-column li::before {
-  content: "→";
+  content: "–";
   position: absolute;
   left: 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-error);
+  font-weight: var(--font-bold);
 }
 
 .sudep-note {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.95);
+  font-size: var(--text-sm);
+  color: var(--color-neutral-600);
   font-style: italic;
-  text-align: center;
   margin: 0;
 }
 
 /* Drug-Resistant Section */
-.drug-resistant {
-  padding: var(--space-20) 0;
-}
-
 .resistant-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: var(--space-12);
-  align-items: center;
+  align-items: start;
 }
 
 .vns-image {
   width: 100%;
   height: 400px;
   object-fit: cover;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
 }
 
 .resistant-info {
-  margin: var(--space-6) 0;
+  margin: var(--space-4) 0;
 }
 
 .resistant-info h4 {
-  font-size: var(--text-xl);
-  color: var(--color-primary-700);
-  margin-bottom: var(--space-4);
+  font-family: var(--font-family-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-primary-800);
+  margin-bottom: var(--space-3);
 }
 
 .resistant-info ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .resistant-info li {
-  color: var(--color-neutral-600);
-  margin-bottom: var(--space-3);
-  padding-left: var(--space-6);
+  color: var(--color-neutral-700);
+  margin-bottom: var(--space-2);
+  padding-left: var(--space-5);
   position: relative;
 }
 
@@ -479,12 +404,12 @@
   content: "✓";
   position: absolute;
   left: 0;
-  color: var(--color-primary-500);
+  color: var(--color-primary-600);
   font-weight: var(--font-bold);
 }
 
 .resistant-note {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   color: var(--color-neutral-600);
   font-style: italic;
   line-height: var(--leading-relaxed);
@@ -492,18 +417,6 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .facts-hero {
-    padding: var(--space-16) 0 var(--space-12);
-  }
-
-  .hero-title {
-    font-size: var(--text-4xl);
-  }
-
-  .hero-description {
-    font-size: var(--text-lg);
-  }
-
   .facts-grid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
@@ -512,7 +425,7 @@
   .types-content,
   .resistant-content {
     grid-template-columns: 1fr;
-    gap: var(--space-12);
+    gap: var(--space-6);
   }
 
   .types-text,
@@ -530,20 +443,12 @@
   }
 
   .sudep-content {
-    padding: var(--space-8) var(--space-6);
+    padding: var(--space-6);
   }
 }
 
 @media (max-width: 480px) {
   .fact-card {
-    padding: var(--space-6) var(--space-4);
-  }
-  
-  .types-list {
-    gap: var(--space-3);
-  }
-  
-  .type-item {
     padding: var(--space-4);
   }
 

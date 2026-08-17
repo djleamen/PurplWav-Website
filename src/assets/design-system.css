@@ -1,56 +1,67 @@
-/* Material Design-inspired Design System for PurplWav */
+/* PurplWav Design System
+   Institutional health-organization styling, modelled on epilepsy
+   agency sites (Epilepsy Ontario, Epilepsy Canada, Epilepsy Durham). */
 
 :root {
-  /* Purple Theme Colors - Primary */
-  --color-primary-50: #f3f0ff;
-  --color-primary-100: #e9e5ff;
-  --color-primary-200: #d6cfff;
-  --color-primary-300: #b8a9ff;
-  --color-primary-400: #9575ff;
-  --color-primary-500: #825ed1; /* Main brand color */
-  --color-primary-600: #7c3aed;
-  --color-primary-700: #6d28d9;
-  --color-primary-800: #5b21b6;
-  --color-primary-900: #4c1d95;
+  /* Brand Purple - deep, muted awareness purple */
+  --color-primary-50: #f6f3fa;
+  --color-primary-100: #ebe4f4;
+  --color-primary-200: #d3c5e8;
+  --color-primary-300: #b39cd6;
+  --color-primary-400: #8f6fbe;
+  --color-primary-500: #6f4aa5;
+  --color-primary-600: #5b3690; /* Main brand color */
+  --color-primary-700: #4a2c77;
+  --color-primary-800: #3a2260;
+  --color-primary-900: #2a1846;
+
+  /* Warm accent - used sparingly for key calls to action */
+  --color-accent-500: #c7541e;
+  --color-accent-600: #a84617;
 
   /* Neutral Colors */
   --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-300: #d4d4d8;
+  --color-neutral-400: #a1a1aa;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #52525b;
+  --color-neutral-700: #3f3f46;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
 
-  /* Semantic Colors */
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
-  --color-info: #3b82f6;
-  --color-other: #071679;
+  /* Semantic Colors - muted, clinical */
+  --color-success: #1e7d4f;
+  --color-success-bg: #eef7f1;
+  --color-warning: #9a6700;
+  --color-warning-bg: #fdf6e7;
+  --color-error: #b3261e;
+  --color-error-bg: #fbeeed;
+  --color-info: #1d5a96;
+  --color-info-bg: #edf4fa;
+  --color-other: #1d3a8a;
 
   /* Surface Colors */
   --color-surface: #ffffff;
-  --color-surface-variant: #f8fafc;
-  --color-background: #fefefe;
+  --color-surface-variant: #f7f6f9;
+  --color-background: #ffffff;
+  --color-border: var(--color-neutral-200);
 
-  /* Typography Scale */
-  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
-  /* Font Sizes - Material Design Scale */
+  /* Typography */
+  --font-family-primary: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Merriweather', Georgia, 'Times New Roman', serif;
+
+  /* Font Sizes */
   --text-xs: 0.75rem;    /* 12px */
   --text-sm: 0.875rem;   /* 14px */
   --text-base: 1rem;     /* 16px */
   --text-lg: 1.125rem;   /* 18px */
   --text-xl: 1.25rem;    /* 20px */
   --text-2xl: 1.5rem;    /* 24px */
-  --text-3xl: 1.875rem;  /* 30px */
-  --text-4xl: 2.25rem;   /* 36px */
-  --text-5xl: 3rem;      /* 48px */
+  --text-3xl: 1.75rem;   /* 28px */
+  --text-4xl: 2.125rem;  /* 34px */
+  --text-5xl: 2.625rem;  /* 42px */
 
   /* Font Weights */
   --font-light: 300;
@@ -63,49 +74,49 @@
   --leading-tight: 1.25;
   --leading-snug: 1.375;
   --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
+  --leading-relaxed: 1.7;
   --leading-loose: 2;
 
-  /* Spacing Scale - 8px base unit (Reduced ~19%) */
-  --space-1: 0.25rem;   /* 4px */
-  --space-2: 0.4rem;    /* 6.4px */
-  --space-3: 0.6rem;    /* 9.6px */
-  --space-4: 0.8rem;    /* 12.8px */
-  --space-5: 1rem;      /* 16px */
-  --space-6: 1.2rem;    /* 19.2px */
-  --space-8: 1.6rem;    /* 25.6px */
-  --space-10: 2rem;     /* 32px */
-  --space-12: 2.4rem;   /* 38.4px */
-  --space-16: 3.2rem;   /* 51.2px */
-  --space-20: 4rem;     /* 64px */
-  --space-24: 4.8rem;   /* 76.8px */
+  /* Spacing Scale - 8px base */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
 
-  /* Border Radius */
-  --radius-sm: 0.25rem;  /* 4px */
-  --radius-md: 0.5rem;   /* 8px */
-  --radius-lg: 0.75rem;  /* 12px */
-  --radius-xl: 1rem;     /* 16px */
-  --radius-2xl: 1.5rem;  /* 24px */
+  /* Border Radius - restrained, institutional */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-2xl: 12px;
   --radius-full: 9999px;
 
-  /* Shadows - Material Design elevation */
+  /* Shadows - minimal */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-md: 0 2px 4px -1px rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 4px 12px -2px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 8px 24px -4px rgb(0 0 0 / 0.12);
+  --shadow-2xl: 0 16px 40px -8px rgb(0 0 0 / 0.16);
 
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
-  --transition-normal: 300ms ease-in-out;
-  --transition-slow: 500ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 400ms ease-in-out;
 
   /* Container Widths */
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
-  --container-xl: 1280px;
-  --container-2xl: 1536px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
 }
 
 /* Reset and Base Styles */
@@ -147,9 +158,9 @@ body, html {
 .leading-relaxed { line-height: var(--leading-relaxed); }
 
 /* Color Utilities */
-.text-primary { color: var(--color-primary-500); }
-.text-primary-light { color: var(--color-primary-300); }
-.text-primary-dark { color: var(--color-primary-700); }
+.text-primary { color: var(--color-primary-600); }
+.text-primary-light { color: var(--color-primary-400); }
+.text-primary-dark { color: var(--color-primary-800); }
 .text-neutral { color: var(--color-neutral-600); }
 .text-neutral-light { color: var(--color-neutral-400); }
 .text-neutral-dark { color: var(--color-neutral-800); }
@@ -159,8 +170,8 @@ body, html {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-4);
-  padding-right: var(--space-4);
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
 }
 
 .container-sm { max-width: var(--container-sm); }
@@ -168,26 +179,128 @@ body, html {
 .container-lg { max-width: var(--container-lg); }
 .container-xl { max-width: var(--container-xl); }
 
-/* Card Component */
-.card {
-  background-color: var(--color-surface);
-  border-radius: var(--radius-xl);
-  padding: var(--space-6);
-  box-shadow: var(--shadow-md);
-  transition: box-shadow var(--transition-normal);
+/* Page Banner - solid purple title band on interior pages */
+.page-banner {
+  background-color: var(--color-primary-700);
+  border-bottom: 4px solid var(--color-primary-900);
+  color: white;
+  padding: var(--space-12) 0;
 }
 
-.card:hover {
-  box-shadow: var(--shadow-lg);
+.page-banner .page-banner-eyebrow {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-200);
+  margin-bottom: var(--space-3);
+}
+
+.page-banner h1 {
+  color: white;
+  font-size: var(--text-4xl);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.page-banner .page-banner-lead {
+  max-width: 760px;
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-primary-100);
+  margin: 0;
+}
+
+/* Section Header - heading with short accent rule */
+.section-header {
+  margin-bottom: var(--space-8);
+}
+
+.section-header h2 {
+  font-size: var(--text-3xl);
+  color: var(--color-neutral-900);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.section-header::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 4px;
+  background-color: var(--color-primary-600);
+  margin-top: var(--space-3);
+}
+
+.section-header.section-header-center {
+  text-align: center;
+}
+
+.section-header.section-header-center::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header .section-lead {
+  max-width: 720px;
+  font-size: var(--text-lg);
+  color: var(--color-neutral-600);
+  margin: 0;
+}
+
+.section-header-center .section-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card Component - flat, bordered */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
 }
 
 .card-elevated {
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
 }
 
-.card-elevated:hover {
-  box-shadow: var(--shadow-xl);
+/* Notice Component - for medical/emergency callouts */
+.notice {
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-primary-600);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-variant);
+  padding: var(--space-6);
 }
+
+.notice-title {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--space-3) 0;
+  color: var(--color-neutral-900);
+}
+
+.notice-emergency {
+  border-left-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.notice-emergency .notice-title { color: var(--color-error); }
+
+.notice-warning {
+  border-left-color: var(--color-warning);
+  background-color: var(--color-warning-bg);
+}
+
+.notice-warning .notice-title { color: var(--color-warning); }
+
+.notice-info {
+  border-left-color: var(--color-info);
+  background-color: var(--color-info-bg);
+}
+
+.notice-info .notice-title { color: var(--color-info); }
 
 /* Button Components */
 .btn {
@@ -195,32 +308,33 @@ body, html {
   align-items: center;
   justify-content: center;
   padding: var(--space-3) var(--space-6);
+  font-family: var(--font-family-primary);
   font-size: var(--text-base);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-semibold);
   line-height: var(--leading-tight);
-  border-radius: var(--radius-lg);
-  border: none;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
   min-height: 44px; /* Accessibility - touch target */
 }
 
 .btn-primary {
-  background-color: var(--color-primary-500);
+  background-color: var(--color-primary-600);
+  border-color: var(--color-primary-600);
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-600);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  background-color: var(--color-primary-700);
+  border-color: var(--color-primary-700);
 }
 
 .btn-secondary {
   background-color: var(--color-neutral-100);
   color: var(--color-neutral-700);
-  border: 1px solid var(--color-neutral-300);
+  border-color: var(--color-neutral-300);
 }
 
 .btn-secondary:hover {
@@ -230,13 +344,36 @@ body, html {
 
 .btn-outline {
   background-color: transparent;
-  color: var(--color-primary-500);
-  border: 2px solid var(--color-primary-500);
+  color: var(--color-primary-600);
+  border-color: var(--color-primary-600);
 }
 
 .btn-outline:hover {
-  background-color: var(--color-primary-500);
+  background-color: var(--color-primary-600);
   color: white;
+}
+
+/* Inverse buttons for use on purple backgrounds */
+.btn-inverse {
+  background-color: white;
+  color: var(--color-primary-700);
+  border-color: white;
+}
+
+.btn-inverse:hover {
+  background-color: var(--color-primary-100);
+  border-color: var(--color-primary-100);
+}
+
+.btn-inverse-outline {
+  background-color: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-inverse-outline:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: white;
 }
 
 /* Content Sections */
@@ -244,9 +381,10 @@ body, html {
   padding: var(--space-16) 0;
 }
 
-.section-hero {
-  padding: var(--space-24) 0;
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
+.section-alt {
+  background-color: var(--color-surface-variant);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* Grid System */
@@ -300,81 +438,26 @@ body, html {
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 
-/* Footer Component */
-.footer {
-  background-color: white;
-  color: var(--color-neutral-700);
-  padding: var(--space-6) 0 var(--space-4);
-  margin-top: var(--space-20);
-  border-top: 1px solid var(--color-neutral-200);
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.footer-logo {
-  font-size: var(--text-lg);
-  font-weight: var(--font-bold);
-  color: var(--color-primary-600);
-}
-
-.footer-social {
-  display: flex;
-  gap: var(--space-3);
-  align-items: center;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-neutral-200);
-  color: var(--color-neutral-600);
-  text-decoration: none;
-  transition: all var(--transition-fast);
-  font-size: var(--text-base);
-}
-
-.social-link:hover {
-  background-color: var(--color-primary-500);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.social-link .v-icon {
-  color: inherit;
-}
-
-.footer-text {
-  font-size: var(--text-xs);
-  color: var(--color-neutral-500);
-  text-align: center;
-  line-height: var(--leading-relaxed);
-}
-
 /* Responsive Utilities */
 @media (max-width: 640px) {
   .container {
-    padding-left: var(--space-3);
-    padding-right: var(--space-3);
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
   }
-  
+
   .text-4xl { font-size: var(--text-3xl); }
   .text-5xl { font-size: var(--text-4xl); }
-  
+
   .section {
     padding: var(--space-12) 0;
   }
-  
-  .section-hero {
-    padding: var(--space-16) 0;
+
+  .page-banner {
+    padding: var(--space-8) 0;
+  }
+
+  .page-banner h1 {
+    font-size: var(--text-3xl);
   }
 
   /* Reduce left padding on mobile for better space utilization */
@@ -382,24 +465,4 @@ body, html {
   .pl-12 { padding-left: var(--space-6); }
   .ml-8 { margin-left: var(--space-4); }
   .ml-12 { margin-left: var(--space-6); }
-
-  /* Footer responsive adjustments */
-  .footer {
-    padding: var(--space-4) 0 var(--space-3);
-    margin-top: var(--space-16);
-  }
-  
-  .footer-social {
-    gap: var(--space-2);
-  }
-  
-  .social-link {
-    width: 36px;
-    height: 36px;
-    font-size: var(--text-sm);
-  }
-  
-  .social-link .v-icon {
-    font-size: 20px !important;
-  }
 }

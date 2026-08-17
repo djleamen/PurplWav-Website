@@ -1,24 +1,25 @@
 <template>
   <div class="about">
-    <!-- About Hero Section -->
-    <section class="about-hero">
+    <!-- Page Banner -->
+    <section class="page-banner">
       <div class="container container-xl">
-        <div class="hero-content">
-          <h1 class="hero-title">About <span class="text-primary">PurplWav</span></h1>
-          <p class="hero-description">
-            PurplWav is dedicated to raising awareness about epilepsy and providing support to those affected by it.
-            Started in 2016 by mother and daughter Melike and Dilara as a way of supporting son and younger brother Aydin,
-            who has drug-resistant epilepsy, PurplWav has grown into a much larger campaign that works with local nonprofits
-            to provide information and resources to those affected by the disease.
-          </p>
-        </div>
+        <span class="page-banner-eyebrow">About Us</span>
+        <h1>About PurplWav</h1>
+        <p class="page-banner-lead">
+          PurplWav is dedicated to raising awareness about epilepsy and providing support to those affected by it.
+          Started in 2016 by mother and daughter Melike and Dilara as a way of supporting son and younger brother Aydin,
+          who has drug-resistant epilepsy, PurplWav has grown into a much larger campaign that works with local nonprofits
+          to provide information and resources to those affected by the condition.
+        </p>
       </div>
     </section>
 
     <!-- Videos Section -->
-    <section class="videos-section">
+    <section class="section">
       <div class="container container-xl">
-        <h2 class="section-title text-center mb-12">Our Story in Video</h2>
+        <div class="section-header">
+          <h2>Our Story in Video</h2>
+        </div>
         <div class="videos-grid">
           <div class="video-card card">
             <div class="video-wrapper">
@@ -49,14 +50,14 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team-section">
+    <section class="section section-alt">
       <div class="container container-xl">
-        <h2 class="section-title text-center mb-12">Meet the Team</h2>
+        <div class="section-header">
+          <h2>Meet the Team</h2>
+        </div>
         <div class="team-grid">
-          <div class="team-member card">
-            <div class="member-image">
-              <img src="@/assets/Melike.jpg" alt="Melike Ceylan-Leamen" class="member-photo" />
-            </div>
+          <article class="team-member card">
+            <img src="@/assets/Melike.jpg" alt="Melike Ceylan-Leamen" class="member-photo" />
             <div class="member-info">
               <h3 class="member-name">Melike Ceylan-Leamen</h3>
               <p class="member-role">Co-Founder</p>
@@ -66,12 +67,10 @@
                 she brings personal experience and passion to the cause.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="team-member card">
-            <div class="member-image">
-              <img src="@/assets/Dilara.jpg" alt="Dilara Leamen" class="member-photo" />
-            </div>
+          <article class="team-member card">
+            <img src="@/assets/Dilara.jpg" alt="Dilara Leamen" class="member-photo" />
             <div class="member-info">
               <h3 class="member-name">Dilara Leamen</h3>
               <p class="member-role">Co-Founder</p>
@@ -81,42 +80,42 @@
                 and helping other families navigate similar challenges.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="team-member card">
-            <div class="member-image">
-              <img src="@/assets/Aydin.jpg" alt="Aydin Leamen" class="member-photo" />
-            </div>
+          <article class="team-member card">
+            <img src="@/assets/Aydin.jpg" alt="Aydin Leamen" class="member-photo" />
             <div class="member-info">
               <h3 class="member-name">Aydin Leamen</h3>
-              <p class="member-role">Ambassador & Inspiration</p>
+              <p class="member-role">Ambassador &amp; Inspiration</p>
               <p class="member-description">
                 Aydin is the inspiration behind PurplWav. Despite living with drug-resistant epilepsy, he continues to inspire
                 others with his resilience and strength. His journey has been the driving force behind the campaign's mission.
               </p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Family Photos Section -->
-    <section class="family-photos">
+    <section class="section">
       <div class="container container-xl">
-        <h2 class="section-title text-center mb-12">Our Journey Together</h2>
+        <div class="section-header">
+          <h2>Our Journey Together</h2>
+        </div>
         <div class="photos-grid">
-          <div class="photo-card">
+          <figure class="photo-card">
             <img src="@/assets/CNTower.jpg" alt="Family at CN Tower" class="family-photo" />
-            <p class="photo-caption">Creating memories together</p>
-          </div>
-          <div class="photo-card">
+            <figcaption class="photo-caption">Creating memories together</figcaption>
+          </figure>
+          <figure class="photo-card">
             <img src="@/assets/Recording.jpg" alt="Recording session" class="family-photo" />
-            <p class="photo-caption">Sharing our story</p>
-          </div>
-          <div class="photo-card">
+            <figcaption class="photo-caption">Sharing our story</figcaption>
+          </figure>
+          <figure class="photo-card">
             <img src="@/assets/AydinActionDay.jpg" alt="Family portrait" class="family-photo" />
-            <p class="photo-caption">The heart of PurplWav</p>
-          </div>
+            <figcaption class="photo-caption">The heart of PurplWav</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -124,49 +123,15 @@
 </template>
 
 <style scoped>
-/* About Hero Section */
-.about-hero {
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, white 100%);
-  padding: var(--space-20) 0 var(--space-16);
-}
-
-.hero-content {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.hero-title {
-  font-size: var(--text-5xl);
-  margin-bottom: var(--space-6);
-  line-height: var(--leading-tight);
-}
-
-.hero-description {
-  font-size: var(--text-xl);
-  color: var(--color-neutral-600);
-  line-height: var(--leading-relaxed);
-}
-
 /* Videos Section */
-.videos-section {
-  padding: var(--space-20) 0;
-  background-color: var(--color-surface-variant);
-}
-
-.section-title {
-  font-size: var(--text-4xl);
-  color: var(--color-neutral-900);
-}
-
 .videos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: var(--space-8);
+  gap: var(--space-6);
 }
 
 .video-card {
-  padding: var(--space-6);
+  padding: var(--space-4);
 }
 
 .video-wrapper {
@@ -174,9 +139,8 @@
   width: 100%;
   height: 0;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
 }
 
 .video-wrapper iframe {
@@ -188,16 +152,10 @@
 }
 
 /* Team Section */
-.team-section {
-  padding: var(--space-20) 0;
-}
-
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-6);
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .team-member {
@@ -205,138 +163,86 @@
   flex-direction: column;
   align-items: center;
   gap: var(--space-4);
-  padding: var(--space-6);
-  transition: transform var(--transition-normal);
+  padding: var(--space-8) var(--space-6);
   text-align: center;
-}
-
-.team-member:hover {
-  transform: translateY(-2px);
-}
-
-.member-image {
-  flex-shrink: 0;
 }
 
 .member-photo {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: var(--radius-full);
   object-fit: cover;
-  box-shadow: var(--shadow-md);
-}
-
-.member-info {
-  flex: 1;
-  text-align: center;
+  border: 3px solid var(--color-primary-100);
 }
 
 .member-name {
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-2);
-  color: var(--color-primary-700);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-1);
+  color: var(--color-primary-800);
 }
 
 .member-role {
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
-  color: var(--color-primary-500);
+  color: var(--color-primary-600);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   margin-bottom: var(--space-4);
 }
 
 .member-description {
   color: var(--color-neutral-600);
   line-height: var(--leading-relaxed);
+  margin: 0;
 }
 
 /* Family Photos Section */
-.family-photos {
-  padding: var(--space-20) 0;
-  background-color: var(--color-surface-variant);
-}
-
 .photos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-8);
+  gap: var(--space-6);
 }
 
 .photo-card {
-  text-align: center;
+  margin: 0;
 }
 
 .family-photo {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  margin-bottom: var(--space-4);
-  transition: transform var(--transition-normal);
-}
-
-.family-photo:hover {
-  transform: scale(1.02);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--space-3);
 }
 
 .photo-caption {
-  font-size: var(--text-lg);
-  font-weight: var(--font-medium);
-  color: var(--color-neutral-700);
+  font-size: var(--text-base);
+  color: var(--color-neutral-600);
+  text-align: center;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .about-hero {
-    padding: var(--space-16) 0 var(--space-12);
-  }
-
-  .hero-title {
-    font-size: var(--text-4xl);
-  }
-
-  .hero-description {
-    font-size: var(--text-lg);
-  }
-
   .videos-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-
-  .video-card {
-    padding: var(--space-4);
   }
 
   .team-member {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-4);
-    padding: var(--space-4);
-  }
-
-  .member-info {
-    text-align: center;
+    padding: var(--space-6) var(--space-4);
   }
 
   .member-photo {
-    width: 80px;
-    height: 80px;
+    width: 96px;
+    height: 96px;
   }
 
   .photos-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-6);
   }
 }
 
 @media (max-width: 480px) {
-  .videos-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .video-wrapper {
     padding-bottom: 75%; /* Adjust aspect ratio for mobile */
   }

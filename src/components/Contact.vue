@@ -1,26 +1,27 @@
 <template>
   <div class="contact">
-    <!-- Contact Hero Section -->
-    <section class="contact-hero">
+    <!-- Page Banner -->
+    <section class="page-banner">
       <div class="container container-xl">
-        <div class="hero-content">
-          <h1 class="hero-title">Get in <span class="text-primary">Touch</span></h1>
-          <p class="hero-description">
-            We're here to support you and answer any questions. Feel free to reach out to us—
-            remember, you are not alone in this journey.
-          </p>
-        </div>
+        <span class="page-banner-eyebrow">Contact</span>
+        <h1>Get in Touch</h1>
+        <p class="page-banner-lead">
+          We're here to support you and answer any questions. Feel free to reach out to us —
+          remember, you are not alone in this journey.
+        </p>
       </div>
     </section>
 
     <!-- Contact Methods -->
-    <section class="contact-methods">
+    <section class="section">
       <div class="container container-xl">
-        <h2 class="section-title text-center mb-12">Connect With Us</h2>
+        <div class="section-header">
+          <h2>Connect With Us</h2>
+        </div>
         <div class="methods-grid">
           <div class="method-card card">
             <div class="method-icon">
-              <v-icon size="64" color="primary">mdi-instagram</v-icon>
+              <v-icon size="36" color="primary">mdi-instagram</v-icon>
             </div>
             <h3 class="method-title">Instagram</h3>
             <p class="method-description">
@@ -33,7 +34,7 @@
 
           <div class="method-card card">
             <div class="method-icon">
-              <v-icon size="64" color="primary">mdi-twitter</v-icon>
+              <v-icon size="36" color="primary">mdi-twitter</v-icon>
             </div>
             <h3 class="method-title">Twitter/X</h3>
             <p class="method-description">
@@ -46,14 +47,14 @@
 
           <div class="method-card card">
             <div class="method-icon">
-              <v-icon size="64" color="primary">mdi-youtube</v-icon>
+              <v-icon size="36" color="primary">mdi-youtube</v-icon>
             </div>
             <h3 class="method-title">YouTube</h3>
             <p class="method-description">
               Watch our videos, stories, and educational content about epilepsy awareness.
             </p>
             <a href="https://www.youtube.com/@purplwav5518/featured" target="_blank" rel="noopener noreferrer" class="method-link">
-              Purpl Wav YouTube
+              PurplWav on YouTube
             </a>
           </div>
         </div>
@@ -63,35 +64,35 @@
     <!-- Support Message -->
     <section class="support-message">
       <div class="container container-lg">
-        <div class="message-content card card-elevated">
-          <h2 class="message-title">You Are Not Alone</h2>
-          <p class="message-text">
-            Living with epilepsy—whether as a patient, family member, or caregiver—can feel isolating. 
-            But you're part of a strong, supportive community. We're here to provide resources, 
-            share experiences, and remind you that together, we're stronger.
-          </p>
-          <div class="message-stats">
-            <div class="stat-item">
-              <div class="stat-number">65M+</div>
-              <div class="stat-label">People worldwide with epilepsy</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">1 in 26</div>
-              <div class="stat-label">People who will develop epilepsy</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">Together</div>
-              <div class="stat-label">We make a difference</div>
-            </div>
+        <h2 class="message-title">You Are Not Alone</h2>
+        <p class="message-text">
+          Living with epilepsy — whether as a patient, family member, or caregiver — can feel isolating.
+          But you're part of a strong, supportive community. We're here to provide resources,
+          share experiences, and remind you that together, we're stronger.
+        </p>
+        <div class="message-stats">
+          <div class="stat-item">
+            <div class="stat-number">65M+</div>
+            <div class="stat-label">People worldwide with epilepsy</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1 in 26</div>
+            <div class="stat-label">People who will develop epilepsy</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Together</div>
+            <div class="stat-label">We make a difference</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Community Links -->
-    <section class="community-links">
+    <section class="section">
       <div class="container container-xl">
-        <h2 class="section-title text-center mb-12">Helpful Resources</h2>
+        <div class="section-header">
+          <h2>Helpful Resources</h2>
+        </div>
         <div class="links-grid">
           <RouterLink to="/epilepsy-facts" class="link-card card">
             <h4>Learn About Epilepsy</h4>
@@ -127,126 +128,88 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <style scoped>
-/* Contact Hero Section */
-.contact-hero {
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, white 100%);
-  padding: var(--space-20) 0 var(--space-16);
-}
-
-.hero-content {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.hero-title {
-  font-size: var(--text-5xl);
-  margin-bottom: var(--space-6);
-  line-height: var(--leading-tight);
-}
-
-.hero-description {
-  font-size: var(--text-xl);
-  color: var(--color-neutral-600);
-  line-height: var(--leading-relaxed);
-}
-
 /* Contact Methods Section */
-.contact-methods {
-  padding: var(--space-20) 0;
-  background-color: var(--color-surface-variant);
-}
-
-.section-title {
-  font-size: var(--text-4xl);
-  color: var(--color-neutral-900);
-}
-
 .methods-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-8);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
 }
 
 .method-card {
-  text-align: center;
-  padding: var(--space-8);
-  transition: transform var(--transition-normal);
-}
-
-.method-card:hover {
-  transform: translateY(-4px);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .method-icon {
-  font-size: 4rem;
-  margin-bottom: var(--space-6);
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-50);
+  margin-bottom: var(--space-4);
 }
 
 .method-title {
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-4);
-  color: var(--color-primary-700);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+  color: var(--color-primary-800);
 }
 
 .method-description {
   color: var(--color-neutral-600);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
   line-height: var(--leading-relaxed);
+  flex: 1;
 }
 
 .method-link {
   display: inline-block;
-  color: var(--color-primary-500);
+  color: var(--color-primary-600);
   text-decoration: none;
   font-weight: var(--font-semibold);
-  font-size: var(--text-lg);
-  padding: var(--space-3) var(--space-6);
-  border: 2px solid var(--color-primary-500);
-  border-radius: var(--radius-lg);
-  transition: all var(--transition-fast);
+  font-size: var(--text-base);
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid var(--color-primary-600);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .method-link:hover {
-  background-color: var(--color-primary-500);
+  background-color: var(--color-primary-600);
   color: white;
-  transform: translateY(-2px);
 }
 
 /* Support Message Section */
 .support-message {
-  padding: var(--space-20) 0;
-}
-
-.message-content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: var(--space-12);
+  background-color: var(--color-primary-700);
+  border-top: 4px solid var(--color-primary-900);
+  border-bottom: 4px solid var(--color-primary-900);
+  padding: var(--space-16) 0;
   text-align: center;
-  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-600) 100%);
-  color: white;
 }
 
 .message-title {
-  font-size: var(--text-4xl);
+  font-size: var(--text-3xl);
   color: white;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .message-text {
-  font-size: var(--text-xl);
-  color: rgba(255, 255, 255, 0.95);
+  font-size: var(--text-lg);
+  color: var(--color-primary-100);
   line-height: var(--leading-relaxed);
-  margin-bottom: var(--space-12);
+  margin: 0 auto var(--space-10);
+  max-width: 760px;
 }
 
 .message-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-8);
+  gap: var(--space-6);
 }
 
 .stat-item {
@@ -254,7 +217,8 @@ import { RouterLink } from 'vue-router';
 }
 
 .stat-number {
-  font-size: var(--text-4xl);
+  font-family: var(--font-family-heading);
+  font-size: var(--text-3xl);
   font-weight: var(--font-bold);
   color: white;
   margin-bottom: var(--space-2);
@@ -262,57 +226,36 @@ import { RouterLink } from 'vue-router';
 
 .stat-label {
   font-size: var(--text-base);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary-200);
 }
 
 /* Community Links Section */
-.community-links {
-  padding: var(--space-20) 0;
-  background-color: var(--color-surface-variant);
-}
-
 .links-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-6);
 }
 
 .link-card {
   display: flex;
   flex-direction: column;
-  padding: var(--space-8);
+  padding: var(--space-6);
   text-decoration: none;
   color: inherit;
-  transition: all var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-}
-
-.link-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background-color: var(--color-primary-500);
-  transform: scaleY(0);
-  transition: transform var(--transition-normal);
-}
-
-.link-card:hover::before {
-  transform: scaleY(1);
+  border-top: 4px solid var(--color-primary-600);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .link-card:hover {
-  transform: translateY(-2px);
-  color: var(--color-primary-700);
+  background-color: var(--color-primary-50);
 }
 
 .link-card h4 {
-  font-size: var(--text-xl);
-  margin-bottom: var(--space-3);
-  color: var(--color-primary-700);
+  font-family: var(--font-family-primary);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-2);
+  color: var(--color-primary-800);
 }
 
 .link-card p {
@@ -323,43 +266,20 @@ import { RouterLink } from 'vue-router';
 }
 
 .link-arrow {
-  font-size: var(--text-xl);
-  color: var(--color-primary-500);
+  font-size: var(--text-lg);
+  color: var(--color-primary-600);
   font-weight: var(--font-bold);
   align-self: flex-end;
-  transition: transform var(--transition-fast);
-}
-
-.link-card:hover .link-arrow {
-  transform: translateX(var(--space-2));
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .contact-hero {
-    padding: var(--space-16) 0 var(--space-12);
-  }
-
-  .hero-title {
-    font-size: var(--text-4xl);
-  }
-
-  .hero-description {
-    font-size: var(--text-lg);
-  }
-
   .methods-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-
-  .message-content {
-    padding: var(--space-8) var(--space-6);
   }
 
   .message-stats {
     grid-template-columns: 1fr;
-    gap: var(--space-6);
   }
 
   .links-grid {
@@ -369,15 +289,7 @@ import { RouterLink } from 'vue-router';
 
 @media (max-width: 480px) {
   .method-card {
-    padding: var(--space-6) var(--space-4);
-  }
-
-  .method-icon {
-    font-size: 3rem;
-  }
-
-  .stat-number {
-    font-size: var(--text-3xl);
+    padding: var(--space-4);
   }
 }
 </style>

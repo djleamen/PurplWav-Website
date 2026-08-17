@@ -1,258 +1,241 @@
+<script setup lang="ts">
+interface Organization {
+  name: string
+  scope: string
+  description: string
+  url: string
+  urlLabel: string
+  phone?: string
+}
+
+const organizations: Organization[] = [
+  {
+    name: 'Epilepsy Durham Region',
+    scope: 'Local — Durham Region',
+    description:
+      'Community epilepsy agency serving Durham Region with client services, education programs, and events for individuals and families living with epilepsy and seizure disorders.',
+    url: 'https://epilepsydurham.com/',
+    urlLabel: 'epilepsydurham.com',
+    phone: '905-430-3090 · 1-866-EPILEPSY',
+  },
+  {
+    name: 'Epilepsy Toronto',
+    scope: 'Regional — Toronto',
+    description:
+      'Offers adult, children and youth, and employment services, support groups, and public education for people living with epilepsy and other seizure disorders.',
+    url: 'https://epilepsytoronto.org/',
+    urlLabel: 'epilepsytoronto.org',
+    phone: '416-964-9095',
+  },
+  {
+    name: 'Epilepsy Ontario',
+    scope: 'Provincial',
+    description:
+      'The voice of epilepsy in Ontario since 1956, promoting independence and optimal quality of life through awareness, education, advocacy, and an agency locator for community supports.',
+    url: 'https://epilepsyontario.org/',
+    urlLabel: 'epilepsyontario.org',
+    phone: '905-738-9431',
+  },
+  {
+    name: 'Canadian Epilepsy Alliance',
+    scope: 'National',
+    description:
+      'A Canada-wide network of community epilepsy agencies — including Epilepsy Durham Region — providing support, information, and referrals through one toll-free line.',
+    url: 'https://www.canadianepilepsyalliance.org/',
+    urlLabel: 'canadianepilepsyalliance.org',
+    phone: '1-866-EPILEPSY (374-5377)',
+  },
+  {
+    name: 'Epilepsy Canada',
+    scope: 'National',
+    description:
+      'A registered charity founded in 1966, dedicated to funding peer-reviewed epilepsy research and advancing treatment and cures through awareness and education.',
+    url: 'https://www.epilepsy.ca/',
+    urlLabel: 'epilepsy.ca',
+  },
+  {
+    name: 'Canadian League Against Epilepsy',
+    scope: 'National — Professional',
+    description:
+      'The professional association of physicians, scientists, and healthcare workers dedicated to improving epilepsy care in Canada through research, education, and advocacy.',
+    url: 'https://claegroup.org/',
+    urlLabel: 'claegroup.org',
+  },
+  {
+    name: 'SickKids Epilepsy Classroom',
+    scope: 'Education',
+    description:
+      'Free learning modules from The Hospital for Sick Children (Toronto) covering epilepsy basics, treatment, and daily life — written for patients, families, and educators.',
+    url: 'https://www.sickkids.ca/en/learning/patient-family-education/epilepsy-classroom/',
+    urlLabel: 'sickkids.ca',
+  },
+  {
+    name: 'Purple Day',
+    scope: 'International',
+    description:
+      'Global epilepsy awareness day held every March 26, founded in 2008 by Cassidy Megan of Nova Scotia. Supporters wear purple to increase understanding and reduce stigma.',
+    url: 'https://purpleday.org/',
+    urlLabel: 'purpleday.org',
+  },
+]
+
+const supportGroups = [
+  {
+    title: 'Medical Care',
+    icon: 'mdi-stethoscope',
+    items: [
+      {
+        name: 'Lakeridge Health',
+        text: "Durham Region's hospital network, including emergency and neurology services.",
+      },
+      {
+        name: 'Comprehensive Epilepsy Programs',
+        text: 'Specialized epilepsy centres in Ontario — SickKids for children, Toronto Western Hospital for adults. Ask your doctor about a referral.',
+      },
+    ],
+  },
+  {
+    title: 'At School',
+    icon: 'mdi-school-outline',
+    items: [
+      {
+        name: 'School Support Programs',
+        text: 'Individual Education Plan (IEP) development and classroom accommodations through your school board.',
+      },
+      {
+        name: 'Educator Training',
+        text: 'Epilepsy awareness presentations for teachers and classrooms, offered by community epilepsy agencies.',
+      },
+    ],
+  },
+  {
+    title: 'In the Community',
+    icon: 'mdi-account-group-outline',
+    items: [
+      {
+        name: 'Support Groups',
+        text: 'Connect with other individuals and families through programs run by Epilepsy Durham Region and Epilepsy Toronto.',
+      },
+      {
+        name: 'Advocacy & Awareness',
+        text: 'Get involved in Purple Day and other initiatives that reduce stigma and improve epilepsy care.',
+      },
+    ],
+  },
+]
+
+const emergencyContacts = [
+  {
+    label: 'Emergency Services',
+    number: '911',
+    tel: '911',
+    text: 'Call immediately if a seizure lasts more than 5 minutes, repeats without recovery, or causes injury.',
+  },
+  {
+    label: 'Health811',
+    number: '811',
+    tel: '811',
+    text: 'Free, 24/7 health advice from registered nurses. Call or text 811 (formerly Telehealth Ontario).',
+  },
+  {
+    label: 'Ontario Poison Centre',
+    number: '1-800-268-9017',
+    tel: '18002689017',
+    text: '24/7 assistance for medication overdose or drug interactions.',
+  },
+  {
+    label: 'Canadian Epilepsy Alliance',
+    number: '1-866-EPILEPSY',
+    tel: '18663745377',
+    text: 'Information and referral to your nearest community epilepsy agency (1-866-374-5377).',
+  },
+]
+</script>
+
 <template>
   <div class="resources">
-    <!-- Resources Hero Section -->
-    <section class="resources-hero">
+    <!-- Page Banner -->
+    <section class="page-banner">
       <div class="container container-xl">
-        <div class="hero-content">
-          <h1 class="hero-title">Local <span class="text-primary">Resources</span></h1>
-          <p class="hero-description">
-            Find support services, organizations, and resources available in Durham Region 
-            and across Ontario for those affected by epilepsy.
-          </p>
-        </div>
+        <span class="page-banner-eyebrow">Support</span>
+        <h1>Local Resources</h1>
+        <p class="page-banner-lead">
+          Find support services, organizations, and resources available in Durham Region 
+          and across Ontario for those affected by epilepsy.
+        </p>
       </div>
     </section>
 
-    <!-- Featured Resources -->
-    <section class="featured-resources">
+    <!-- Key Organizations Directory -->
+    <section class="section">
       <div class="container container-xl">
-        <h2 class="section-title text-center mb-12">Key Organizations</h2>
-        <div class="resources-grid">
-          <div class="resource-card card card-elevated">
-            <div class="resource-header">
-              <h3 class="resource-title">Epilepsy Canada</h3>
-              <div class="resource-badge">National</div>
-            </div>
-            <p class="resource-description">
-              The national organization providing comprehensive support, education, and advocacy 
-              for people with epilepsy across Canada.
-            </p>
-            <div class="resource-services">
-              <span class="service-tag">Education</span>
-              <span class="service-tag">Advocacy</span>
-              <span class="service-tag">Support</span>
-            </div>
-            <a href="https://www.epilepsy.ca/" target="_blank" rel="noopener noreferrer" class="resource-link">
-              Visit Website →
-            </a>
-          </div>
-
-          <div class="resource-card card card-elevated">
-            <div class="resource-header">
-              <h3 class="resource-title">Epilepsy Ontario</h3>
-              <div class="resource-badge provincial">Provincial</div>
-            </div>
-            <p class="resource-description">
-              Provincial organization offering programs, services, and community support 
-              throughout Ontario for individuals and families.
-            </p>
-            <div class="resource-services">
-              <span class="service-tag">Programs</span>
-              <span class="service-tag">Community</span>
-              <span class="service-tag">Resources</span>
-            </div>
-            <a href="https://epilepsyontario.org/" target="_blank" rel="noopener noreferrer" class="resource-link">
-              Visit Website →
-            </a>
-          </div>
-
-          <div class="resource-card card card-elevated">
-            <div class="resource-header">
-              <h3 class="resource-title">Epilepsy Durham Region</h3>
-              <div class="resource-badge local">Local</div>
-            </div>
-            <p class="resource-description">
-              Local support specifically for Durham Region residents, offering personalized 
-              assistance and community connections.
-            </p>
-            <div class="resource-services">
-              <span class="service-tag">Local Support</span>
-              <span class="service-tag">Community</span>
-              <span class="service-tag">Assistance</span>
-            </div>
-            <a href="https://epilepsydurham.com/" target="_blank" rel="noopener noreferrer" class="resource-link">
-              Visit Website →
-            </a>
-          </div>
-
-          <div class="resource-card card card-elevated">
-            <div class="resource-header">
-              <h3 class="resource-title">Epilepsy Toronto</h3>
-              <div class="resource-badge regional">Regional</div>
-            </div>
-            <p class="resource-description">
-              Serving the Greater Toronto Area with specialized programs, support groups, 
-              and educational resources for the epilepsy community.
-            </p>
-            <div class="resource-services">
-              <span class="service-tag">Support Groups</span>
-              <span class="service-tag">Education</span>
-              <span class="service-tag">GTA Service</span>
-            </div>
-            <a href="https://www.epilepsytoronto.org/" target="_blank" rel="noopener noreferrer" class="resource-link">
-              Visit Website →
-            </a>
-          </div>
-
-          <div class="resource-card card card-elevated">
-            <div class="resource-header">
-              <h3 class="resource-title">Canadian League Against Epilepsy</h3>
-              <div class="resource-badge">National</div>
-            </div>
-            <p class="resource-description">
-              Professional organization of healthcare providers dedicated to improving 
-              epilepsy care through research, education, and advocacy.
-            </p>
-            <div class="resource-services">
-              <span class="service-tag">Research</span>
-              <span class="service-tag">Medical</span>
-              <span class="service-tag">Professional</span>
-            </div>
-            <a href="https://claegroup.org" target="_blank" rel="noopener noreferrer" class="resource-link">
-              Visit Website →
-            </a>
-          </div>
-
-          <div class="resource-card card card-elevated">
-            <div class="resource-header">
-              <h3 class="resource-title">Purple Day</h3>
-              <div class="resource-badge global">Global</div>
-            </div>
-            <p class="resource-description">
-              Annual awareness campaign dedicated to increasing understanding 
-              and reducing stigma around epilepsy through Purple Day events.
-            </p>
-            <div class="resource-services">
-              <span class="service-tag">Awareness</span>
-              <span class="service-tag">Events</span>
-              <span class="service-tag">Stigma Reduction</span>
-            </div>
-            <a href="https://www.purpleday.org/" target="_blank" rel="noopener noreferrer" class="resource-link">
-              Visit Website →
-            </a>
-          </div>
+        <div class="section-header">
+          <h2>Key Organizations</h2>
+          <p class="section-note">
+            A directory of trusted epilepsy organizations, from local support in Durham Region 
+            to national research and international awareness.
+          </p>
         </div>
+        <ul class="org-directory">
+          <li v-for="org in organizations" :key="org.name" class="org-row">
+            <div class="org-main">
+              <div class="org-heading">
+                <h3 class="org-name">
+                  <a :href="org.url" target="_blank" rel="noopener noreferrer">{{ org.name }}</a>
+                </h3>
+                <span class="org-scope">{{ org.scope }}</span>
+              </div>
+              <p class="org-description">{{ org.description }}</p>
+            </div>
+            <div class="org-meta">
+              <a :href="org.url" target="_blank" rel="noopener noreferrer" class="org-link">
+                <v-icon size="16">mdi-open-in-new</v-icon>
+                {{ org.urlLabel }}
+              </a>
+              <span v-if="org.phone" class="org-phone">
+                <v-icon size="16">mdi-phone-outline</v-icon>
+                {{ org.phone }}
+              </span>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- Additional Resources -->
-    <section class="additional-resources">
+    <section class="section section-alt">
       <div class="container container-xl">
-        <h2 class="section-title text-center mb-12">Additional Support</h2>
-        <div class="additional-grid">
-          <div class="additional-category">
-            <h3 class="category-title">Medical Resources</h3>
-            <div class="category-content">
-              <div class="resource-item">
-                <div class="icon-placeholder">
-                  <v-icon size="32" color="other">mdi-hospital-building</v-icon>
-                </div>
-                <div>
-                  <h4>Children's Hospital of Eastern Ontario</h4>
-                  <p>Educational support and specialized programs for students</p>
-                </div>
-              </div>
-              <div class="resource-item">
-                <div class="icon-placeholder">
-                  <v-icon size="32" color="other">mdi-brain</v-icon>
-                </div>
-                <div>
-                  <h4>Local Neurologists</h4>
-                  <p>Find epilepsy specialists in Durham Region</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="additional-category">
-            <h3 class="category-title">Educational Support</h3>
-            <div class="category-content">
-              <div class="resource-item">
-                <div class="icon-placeholder">
-                  <v-icon size="32" color="other">mdi-school</v-icon>
-                </div>
-                <div>
-                  <h4>School Support Programs</h4>
-                  <p>IEP development and classroom accommodations</p>
-                </div>
-              </div>
-              <div class="resource-item">
-                <div class="icon-placeholder">
-                  <v-icon size="32" color="other">mdi-book</v-icon>
-                </div>
-                <div>
-                  <h4>Teacher Training</h4>
-                  <p>Epilepsy awareness programs for educators</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="additional-category">
-            <h3 class="category-title">Community Support</h3>
-            <div class="category-content">
-              <div class="resource-item">
-                <div class="icon-placeholder">
-                  <v-icon size="32" color="other">mdi-account-group</v-icon>
-                </div>
-                <div>
-                  <h4>Support Groups</h4>
-                  <p>Connect with other families and individuals</p>
-                </div>
-              </div>
-              <div class="resource-item">
-                <div class="icon-placeholder">
-                  <v-icon size="32" color="other">mdi-heart</v-icon>
-                </div>
-                <div>
-                  <h4>Advocacy Programs</h4>
-                  <p>Get involved in epilepsy awareness initiatives</p>
-                </div>
-              </div>
-            </div>
+        <div class="section-header">
+          <h2>Additional Support</h2>
+        </div>
+        <div class="support-columns">
+          <div v-for="group in supportGroups" :key="group.title" class="support-column">
+            <h3 class="support-title">
+              <v-icon size="20" color="primary">{{ group.icon }}</v-icon>
+              {{ group.title }}
+            </h3>
+            <ul class="support-list">
+              <li v-for="item in group.items" :key="item.name" class="support-item">
+                <h4>{{ item.name }}</h4>
+                <p>{{ item.text }}</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Emergency Information -->
-    <section class="emergency-info">
-      <div class="container container-lg">
-        <div class="emergency-content card card-elevated">
-          <h2 class="emergency-title">Emergency Resources</h2>
-          <div class="emergency-grid">
-            <div class="emergency-item">
-              <div class="emergency-icon">
-                <v-icon size="48" color="white">mdi-ambulance</v-icon>
-              </div>
-              <h4>Emergency Services</h4>
-              <p class="emergency-number">911</p>
-              <p>Call immediately if seizure lasts more than 5 minutes</p>
-            </div>
-            <div class="emergency-item">
-              <div class="emergency-icon">
-                <v-icon size="48" color="white">mdi-phone</v-icon>
-              </div>
-              <h4>Telehealth Ontario</h4>
-              <p class="emergency-number">1-866-797-0000</p>
-              <p>24/7 health advice from registered nurses</p>
-            </div>
-            <div class="emergency-item">
-              <div class="emergency-icon">
-                <v-icon size="48" color="white">mdi-hospital-building</v-icon>
-              </div>
-              <h4>Local Hospital</h4>
-              <p class="emergency-number">Lakeridge Health</p>
-              <p>Emergency department for urgent epilepsy-related care</p>
-            </div>
-            <div class="emergency-item">
-              <div class="emergency-icon">
-                <v-icon size="48" color="white">mdi-medical-bag</v-icon>
-              </div>
-              <h4>Poison Control</h4>
-              <p class="emergency-number">1-800-268-9017</p>
-              <p>24/7 assistance for medication overdose or interactions</p>
-            </div>
+    <section class="section">
+      <div class="container container-xl">
+        <div class="section-header">
+          <h2>Emergency Contacts</h2>
+        </div>
+        <div class="emergency-panel">
+          <div v-for="contact in emergencyContacts" :key="contact.label" class="emergency-row">
+            <div class="emergency-label">{{ contact.label }}</div>
+            <a :href="`tel:${contact.tel}`" class="emergency-number">{{ contact.number }}</a>
+            <p class="emergency-text">{{ contact.text }}</p>
           </div>
         </div>
       </div>
@@ -261,262 +244,187 @@
 </template>
 
 <style scoped>
-/* Resources Hero Section */
-.resources-hero {
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, white 100%);
-  padding: var(--space-20) 0 var(--space-16);
-}
-
-.hero-content {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.hero-title {
-  font-size: var(--text-5xl);
-  margin-bottom: var(--space-6);
-  line-height: var(--leading-tight);
-}
-
-.hero-description {
-  font-size: var(--text-xl);
+/* Key Organizations Directory */
+.section-note {
   color: var(--color-neutral-600);
-  line-height: var(--leading-relaxed);
+  max-width: 65ch;
+  margin-top: var(--space-2);
 }
 
-/* Featured Resources Section */
-.featured-resources {
-  padding: var(--space-20) 0;
-  background-color: var(--color-surface-variant);
-}
-
-.section-title {
-  font-size: var(--text-4xl);
-  color: var(--color-neutral-900);
-}
-
-.resources-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--space-6);
-}
-
-.resource-card {
-  padding: var(--space-8);
-  transition: transform var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-}
-
-.resource-card:hover {
-  transform: translateY(-4px);
-}
-
-.resource-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: var(--space-4);
-}
-
-.resource-title {
-  font-size: var(--text-2xl);
-  color: var(--color-primary-700);
+.org-directory {
+  list-style: none;
   margin: 0;
-  flex: 1;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
 }
 
-.resource-badge {
-  background-color: var(--color-primary-500);
-  color: white;
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  font-size: var(--text-xs);
-  font-weight: var(--font-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.resource-badge.provincial {
-  background-color: var(--color-info);
-}
-
-.resource-badge.local {
-  background-color: var(--color-success);
-}
-
-.resource-badge.regional {
-  background-color: var(--color-warning);
-}
-
-.resource-badge.global {
-  background-color: var(--color-other);
-}
-
-.resource-description {
-  color: var(--color-neutral-600);
-  line-height: var(--leading-relaxed);
-  margin-bottom: var(--space-6);
-}
-
-.resource-services {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-bottom: var(--space-6);
-}
-
-.service-tag {
-  background-color: var(--color-primary-100);
-  color: var(--color-primary-700);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-md);
-  font-size: var(--text-sm);
-  font-weight: var(--font-medium);
-}
-
-.resource-link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--color-primary-500);
-  text-decoration: none;
-  font-weight: var(--font-semibold);
-  font-size: var(--text-lg);
-  transition: color var(--transition-fast);
-}
-
-.resource-link:hover {
-  color: var(--color-primary-700);
-}
-
-/* Additional Resources Section */
-.additional-resources {
-  padding: var(--space-20) 0;
-}
-
-.additional-grid {
+.org-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-8);
-}
-
-.additional-category {
-  background-color: var(--color-surface);
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
-  box-shadow: var(--shadow-md);
-}
-
-.category-title {
-  font-size: var(--text-2xl);
-  color: var(--color-primary-700);
-  margin-bottom: var(--space-6);
-  text-align: center;
-}
-
-.category-content {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: 1fr 260px;
   gap: var(--space-6);
+  align-items: start;
+  padding: var(--space-5) var(--space-2);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.resource-item {
+.org-row:hover {
+  background-color: var(--color-primary-50);
+}
+
+.org-heading {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-4);
-}
-
-.resource-icon {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-}
-
-.icon-placeholder {
-  width: 60px;
-  height: 60px;
-  background-color: var(--color-primary-100);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-2xl);
-  flex-shrink: 0;
-}
-
-.resource-item h4 {
-  font-size: var(--text-lg);
-  color: var(--color-neutral-800);
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-3);
   margin-bottom: var(--space-2);
 }
 
-.resource-item p {
+.org-name {
+  font-size: var(--text-lg);
+  margin: 0;
+}
+
+.org-name a {
+  color: var(--color-primary-800);
+  text-decoration: none;
+}
+
+.org-name a:hover {
+  text-decoration: underline;
+}
+
+.org-scope {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-neutral-500);
+}
+
+.org-description {
+  color: var(--color-neutral-600);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+  max-width: 68ch;
+}
+
+.org-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  padding-top: var(--space-1);
+}
+
+.org-link,
+.org-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-neutral-700);
+}
+
+.org-link {
+  color: var(--color-primary-600);
+  text-decoration: none;
+  font-weight: var(--font-semibold);
+}
+
+.org-link:hover {
+  color: var(--color-primary-800);
+  text-decoration: underline;
+}
+
+/* Additional Support */
+.support-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-10);
+}
+
+.support-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-lg);
+  color: var(--color-primary-800);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--color-primary-600);
+}
+
+.support-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.support-item {
+  padding: var(--space-4) 0;
+}
+
+.support-item + .support-item {
+  border-top: 1px solid var(--color-border);
+}
+
+.support-item h4 {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--space-1);
+}
+
+.support-item p {
   color: var(--color-neutral-600);
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
   margin: 0;
 }
 
-/* Emergency Information Section */
-.emergency-info {
-  padding: var(--space-20) 0;
-  background-color: var(--color-surface-variant);
+/* Emergency Contacts */
+.emergency-panel {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-error);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  overflow: hidden;
 }
 
-.emergency-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-12);
-  background: linear-gradient(135deg, var(--color-error) 0%, #dc2626 100%);
-  color: white;
-}
-
-.emergency-title {
-  font-size: var(--text-4xl);
-  color: white;
-  margin-bottom: var(--space-8);
-  text-align: center;
-}
-
-.emergency-grid {
+.emergency-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-8);
+  grid-template-columns: 240px 200px 1fr;
+  gap: var(--space-6);
+  align-items: baseline;
+  padding: var(--space-4) var(--space-6);
 }
 
-.emergency-item {
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: var(--space-6);
-  border-radius: var(--radius-lg);
+.emergency-row + .emergency-row {
+  border-top: 1px solid var(--color-border);
 }
 
-.emergency-icon {
-  font-size: 3rem;
-  margin-bottom: var(--space-4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.emergency-item h4 {
-  font-size: var(--text-xl);
-  color: white;
-  margin-bottom: var(--space-3);
+.emergency-label {
+  font-weight: var(--font-bold);
+  color: var(--color-neutral-900);
 }
 
 .emergency-number {
-  font-size: var(--text-2xl);
+  font-size: var(--text-lg);
   font-weight: var(--font-bold);
-  color: white;
-  margin-bottom: var(--space-3);
+  color: var(--color-error);
+  text-decoration: none;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
-.emergency-item p:last-child {
-  color: rgba(255, 255, 255, 0.9);
+.emergency-number:hover {
+  text-decoration: underline;
+}
+
+.emergency-text {
+  color: var(--color-neutral-600);
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
   margin: 0;
@@ -524,71 +432,33 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .emergency-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-5);
+  .support-columns {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .emergency-row {
+    grid-template-columns: 200px 160px 1fr;
+    gap: var(--space-4);
   }
 }
 
 @media (max-width: 768px) {
-  .resources-hero {
-    padding: var(--space-16) 0 var(--space-12);
-  }
-
-  .hero-title {
-    font-size: var(--text-4xl);
-  }
-
-  .hero-description {
-    font-size: var(--text-lg);
-  }
-
-  .resources-grid {
+  .org-row {
     grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-
-  .resource-header {
-    flex-direction: column;
-    gap: var(--space-3);
-    align-items: flex-start;
-  }
-
-  .additional-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-
-  .emergency-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-  }
-
-  .emergency-content {
-    padding: var(--space-8) var(--space-6);
-  }
-}
-
-@media (max-width: 480px) {
-  .resource-card {
-    padding: var(--space-6) var(--space-4);
-  }
-
-  .additional-category {
-    padding: var(--space-6) var(--space-4);
-  }
-
-  .resource-item {
-    flex-direction: column;
-    text-align: center;
     gap: var(--space-3);
   }
 
-  .resource-icon,
-  .icon-placeholder {
-    width: 50px;
-    height: 50px;
-    align-self: center;
+  .org-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .emergency-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+    padding: var(--space-4);
   }
 }
 </style>

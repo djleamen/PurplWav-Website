@@ -1,28 +1,47 @@
 <template>
   <div class="aydin-story">
-    <!-- Hero Section -->
-    <section class="story-hero">
+    <!-- Page Banner -->
+    <section class="page-banner">
       <div class="container container-xl">
-        <div class="hero-content">
-          <div class="hero-text pl-8">
-            <h1 class="hero-title">Meet <span class="text-primary">Aydin</span></h1>
-            <p class="hero-description">
-              Aydin has shown incredible resilience throughout his life, facing many medical challenges 
-              and hospital visits with strength and courage. Through it all, he has remained positive 
-              and determined to overcome his obstacles, inspiring those around him with his unwavering spirit.
+        <span class="page-banner-eyebrow">Our Ambassador</span>
+        <h1>Meet Aydin</h1>
+        <p class="page-banner-lead">
+          Aydin has shown incredible resilience throughout his life, facing many medical challenges 
+          and hospital visits with strength and courage.
+        </p>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="section">
+      <div class="container container-xl">
+        <div class="intro-content">
+          <img src="@/assets/Aydin.jpg" alt="Aydin Leamen" class="aydin-photo" />
+          <div class="intro-text">
+            <div class="section-header">
+              <h2>Aydin's Journey</h2>
+            </div>
+            <p>
+              Aydin lives with drug-resistant epilepsy and was diagnosed with Lennox-Gastaut
+              Syndrome in 2023. Through years of treatments, hospital stays, and surgeries,
+              he has remained positive and determined to overcome his obstacles, inspiring
+              those around him with his unwavering spirit.
             </p>
-          </div>
-          <div class="hero-image">
-            <img src="@/assets/Aydin.jpg" alt="Aydin Leamen" class="aydin-photo" />
+            <p>
+              His journey is the reason PurplWav exists — and the timeline below traces the
+              milestones that shaped our campaign.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Timeline Section -->
-    <section class="timeline-section">
+    <section class="section section-alt">
       <div class="container container-xl">
-        <h2 class="section-title text-center mb-12">Journey Timeline</h2>
+        <div class="section-header">
+          <h2>Journey Timeline</h2>
+        </div>
         <Timeline />
       </div>
     </section>
@@ -30,34 +49,17 @@
     <!-- Impact Section -->
     <section class="impact-section">
       <div class="container container-lg">
-        <div class="impact-content card card-elevated">
-          <h2 class="impact-title">The Inspiration Behind PurplWav</h2>
-          <p class="impact-text">
-            Aydin's courage in facing drug-resistant epilepsy has not only inspired his family 
-            but has become the driving force behind PurplWav's mission. His story shows that 
-            with love, support, and determination, challenges can become sources of strength 
-            and inspiration for others.
-          </p>
-          <div class="impact-stats">
-            <div class="stat-item">
-              <div class="stat-icon">
-                <v-icon size="32" color="white">mdi-heart</v-icon>
-              </div>
-              <div class="stat-text">Inspiring countless families</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-icon">
-                <v-icon size="32" color="white">mdi-star</v-icon>
-              </div>
-              <div class="stat-text">Raising awareness daily</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-icon">
-                <v-icon size="32" color="white">mdi-handshake</v-icon>
-              </div>
-              <div class="stat-text">Building community support</div>
-            </div>
-          </div>
+        <h2 class="impact-title">The Inspiration Behind PurplWav</h2>
+        <p class="impact-text">
+          Aydin's courage in facing drug-resistant epilepsy has not only inspired his family 
+          but has become the driving force behind PurplWav's mission. His story shows that 
+          with love, support, and determination, challenges can become sources of strength 
+          and inspiration for others.
+        </p>
+        <div class="impact-stats">
+          <div class="stat-item">Inspiring countless families</div>
+          <div class="stat-item">Raising awareness daily</div>
+          <div class="stat-item">Building community support</div>
         </div>
       </div>
     </section>
@@ -69,211 +71,79 @@ import Timeline from '@/components/TImeline.vue';
 </script>
 
 <style scoped>
-/* Story Hero Section */
-.story-hero {
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, white 100%);
-  padding: var(--space-20) 0 var(--space-16);
-}
-
-.hero-content {
+/* Intro Section */
+.intro-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 320px 1fr;
   gap: var(--space-12);
-  align-items: center;
-}
-
-.hero-title {
-  font-size: var(--text-5xl);
-  margin-bottom: var(--space-6);
-  line-height: var(--leading-tight);
-}
-
-.hero-description {
-  font-size: var(--text-xl);
-  color: var(--color-neutral-600);
-  line-height: var(--leading-relaxed);
-}
-
-.hero-image {
-  display: flex;
-  justify-content: center;
+  align-items: start;
 }
 
 .aydin-photo {
-  width: 300px;
-  height: 300px;
-  border-radius: var(--radius-full);
-  object-fit: cover;
-  box-shadow: var(--shadow-xl);
-  border: 6px solid white;
-}
-
-/* Photo Gallery Section */
-.photo-gallery {
-  padding: var(--space-20) 0;
-  background-color: var(--color-surface-variant);
-}
-
-.section-title {
-  font-size: var(--text-4xl);
-  color: var(--color-neutral-900);
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-6);
-}
-
-.photo-item {
-  text-align: center;
-}
-
-.gallery-photo {
   width: 100%;
-  height: 300px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
   object-fit: cover;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  margin-bottom: var(--space-4);
-  transition: transform var(--transition-normal);
+  aspect-ratio: 1;
 }
 
-.gallery-photo:hover {
-  transform: scale(1.05);
-}
-
-.photo-caption {
+.intro-text p {
   font-size: var(--text-lg);
-  font-weight: var(--font-medium);
   color: var(--color-neutral-700);
-  margin: 0;
-}
-
-/* Timeline Section */
-.timeline-section {
-  padding: var(--space-20) 0;
+  line-height: var(--leading-relaxed);
 }
 
 /* Impact Section */
 .impact-section {
-  padding: var(--space-20) 0;
-  background-color: var(--color-surface-variant);
-}
-
-.impact-content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: var(--space-12);
+  background-color: var(--color-primary-700);
+  border-top: 4px solid var(--color-primary-900);
+  padding: var(--space-16) 0;
   text-align: center;
-  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-600) 100%);
-  color: white;
 }
 
 .impact-title {
-  font-size: var(--text-4xl);
+  font-size: var(--text-3xl);
   color: white;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .impact-text {
-  font-size: var(--text-xl);
-  color: rgba(255, 255, 255, 0.95);
+  font-size: var(--text-lg);
+  color: var(--color-primary-100);
   line-height: var(--leading-relaxed);
-  margin-bottom: var(--space-12);
+  margin: 0 auto var(--space-8);
+  max-width: 760px;
 }
 
 .impact-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-8);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
 }
 
 .stat-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: var(--space-6);
-  border-radius: var(--radius-lg);
-}
-
-.stat-icon {
-  font-size: var(--text-3xl);
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stat-text {
-  font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: var(--font-medium);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: white;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .story-hero {
-    padding: var(--space-16) 0 var(--space-12);
-  }
-
-  .hero-content {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-    text-align: center;
-  }
-
-  .hero-title {
-    font-size: var(--text-4xl);
-  }
-
-  .hero-description {
-    font-size: var(--text-lg);
-  }
-
-  .aydin-photo {
-    width: 250px;
-    height: 250px;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-4);
-  }
-
-  .gallery-photo {
-    height: 250px;
-  }
-
-  .impact-content {
-    padding: var(--space-8) var(--space-6);
-  }
-
-  .impact-stats {
+  .intro-content {
     grid-template-columns: 1fr;
     gap: var(--space-6);
   }
 
-  .stat-item {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-3);
-  }
-}
-
-@media (max-width: 480px) {
   .aydin-photo {
-    width: 200px;
-    height: 200px;
+    max-width: 320px;
+    margin: 0 auto;
   }
 
-  .gallery-grid {
+  .impact-stats {
     grid-template-columns: 1fr;
-  }
-
-  .gallery-photo {
-    height: 200px;
   }
 }
 </style>

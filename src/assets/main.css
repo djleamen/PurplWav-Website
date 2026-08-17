@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-primary-50) 100%);
+  background-color: var(--color-background);
 }
 
 main {
@@ -25,15 +25,19 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-size: var(--text-4xl); }
 h2 { font-size: var(--text-3xl); }
-h3 { font-size: var(--text-2xl); }
-h4 { font-size: var(--text-xl); }
-h5 { font-size: var(--text-lg); }
-h6 { font-size: var(--text-base); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+h5 { font-size: var(--text-base); }
+h6 { font-size: var(--text-sm); }
 
 p {
   margin: 0 0 var(--space-4) 0;
   color: var(--color-neutral-700);
   line-height: var(--leading-relaxed);
+}
+
+a {
+  color: var(--color-primary-600);
 }
 
 /* Focus States for Accessibility */

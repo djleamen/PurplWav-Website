@@ -32,6 +32,10 @@ coverage
 # TypeScript generated files
 *.vue.js
 *.vue.d.ts
+/src/main.js
+/src/main.d.ts
+/src/router/index.js
+/src/router/index.d.ts
 /types
 
 # amplify
